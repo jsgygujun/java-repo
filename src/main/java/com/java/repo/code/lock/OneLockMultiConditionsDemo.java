@@ -6,7 +6,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 // 一个Lock对象，多个Condition对象
-// 实现多线程循环打印
+// 实现多线程循环打印 ThreadA->ThreadB->ThreadC->ThreadA->...
 public class OneLockMultiConditionsDemo {
 
     static class SharedResource {
