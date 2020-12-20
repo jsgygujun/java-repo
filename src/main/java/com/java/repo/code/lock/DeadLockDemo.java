@@ -1,5 +1,9 @@
 package com.java.repo.code.lock;
 
+/**
+ * 检查死锁
+ * jstack <pid>
+ */
 public class DeadLockDemo {
 
     static void lock(String lockA, String lockB) {
