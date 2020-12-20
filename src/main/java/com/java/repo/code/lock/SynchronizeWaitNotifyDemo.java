@@ -26,7 +26,7 @@ public class SynchronizeWaitNotifyDemo {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         final SharedResource sharedResource = new SharedResource();
         new Thread(() -> {
             try {
