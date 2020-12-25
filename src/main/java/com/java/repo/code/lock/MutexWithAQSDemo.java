@@ -15,11 +15,12 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
  */
 public class MutexWithAQSDemo {
 
+    // 不可重入锁、非递归锁
     static class Mutex {
         private final Sync sync = new Sync();
 
         public void lock() {
-            sync.acquire(1);
+            sync.acquire(1); // sync.acquire() 内部会调用tryAcquire()方法
         }
 
         public void unlock() {
@@ -27,17 +28,35 @@ public class MutexWithAQSDemo {
         }
 
         private static class Sync extends AbstractQueuedSynchronizer {
+            /**
+             * 尝试获取锁
+             * @param arg
+             * @return
+             */
             @Override
             protected boolean tryAcquire(int arg) {
+                // 修改state为1，成功返回true，失败返回false
+                // TODO 成功获取锁需要设置当前线程为该锁的拥有者
                 return compareAndSetState(0, 1);
             }
 
+            /**
+             * 尝试释放锁
+             * @param arg
+             * @return
+             */
             @Override
             protected boolean tryRelease(int arg) {
+                // 修改state为0，成功返回true，失败返回false
+                // TODO 判断当前线程是否拥有锁对象
                 setState(0);
                 return true;
             }
 
+            /**
+             * 判断锁是否互斥
+             * @return
+             */
             @Override
             protected boolean isHeldExclusively() {
                 return getState() == 1;
@@ -62,7 +81,7 @@ public class MutexWithAQSDemo {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    private static void demo1() throws InterruptedException {
         SharedResource sharedResource = new SharedResource();
         Thread t1 = new Thread(() -> {
             for (int i = 0; i < 10000; ++i) {
@@ -81,5 +100,33 @@ public class MutexWithAQSDemo {
         t1.join();
         t2.join();
         System.out.println("final number: " + sharedResource.number);
+    }
+
+    /**
+     * A 线程获取锁，B线程释放锁的情况
+     */
+    private static void demo2() {
+        Mutex mutex = new Mutex();
+        Thread t1 = new Thread(() -> {
+            mutex.lock();
+            System.out.println("hello world -- 1");
+            mutex.lock();
+            System.out.println("hello world -- 2");
+        });
+        t1.start();
+        Thread t2 = new Thread(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            mutex.unlock();
+        });
+        t2.start();
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        //demo1();
+        demo2();
     }
 }
