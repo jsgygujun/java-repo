@@ -10,8 +10,8 @@ import java.lang.reflect.Method;
  */
 public class UserApi implements IUserApi {
     @Override
-    public String queryUserInfo() {
-        return "queryUserInfo 业务代码";
+    public void queryUserInfo() {
+        System.out.println("执行业务逻辑～～");
     }
 
     /**
@@ -22,7 +22,6 @@ public class UserApi implements IUserApi {
     public void test_reflect() throws Exception {
         Class<UserApi> clazz = UserApi.class;
         Method queryUserInfo = clazz.getMethod("queryUserInfo");
-        Object result = queryUserInfo.invoke(clazz.newInstance());
-        System.out.println(result);
+        queryUserInfo.invoke(clazz.newInstance());
     }
 }

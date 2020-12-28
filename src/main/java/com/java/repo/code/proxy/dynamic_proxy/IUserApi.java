@@ -5,5 +5,5 @@ package com.java.repo.code.proxy.dynamic_proxy;
  * @Date 2020/12/28
  */
 public interface IUserApi {
-    String queryUserInfo();
+    void queryUserInfo();
 }

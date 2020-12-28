@@ -21,7 +21,7 @@ public class JDKProxyDemo {
     // 创建动态代理对象
     static class ProxyFactory {
         // 维护一个目标对象
-        private Object target;
+        private final Object target;
         public ProxyFactory(Object target) {
             this.target = target;
         }
@@ -50,6 +50,6 @@ public class JDKProxyDemo {
     public void test_JDK_proxy() throws Exception {
         IUserApi userApi = new UserApi();
         IUserApi proxy = (IUserApi) new ProxyFactory(userApi).getProxyInstance();
-        System.out.println(proxy.queryUserInfo());
+        proxy.queryUserInfo();
     }
 }
