@@ -12,6 +12,9 @@ import java.util.concurrent.Executors;
  */
 public class MainThreadDemo {
 
+    /**
+     * 主线程退出，只要存在非daemon子线程，则JVM不会退出
+     */
     private static void mainThreadExit() {
         new Thread(() -> {
             try {
@@ -24,6 +27,9 @@ public class MainThreadDemo {
         System.out.println("mainThread exit~~~");
     }
 
+    /**
+     * 主线程退出，只存在daemon子线程，则JVM退出
+     */
     private static void mainThreadExitDaemonThread() {
         Thread daemonThread = new Thread(() -> {
             try {
