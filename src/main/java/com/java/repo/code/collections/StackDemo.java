@@ -7,6 +7,11 @@ import java.util.LinkedList;
  * Java 中的 Stack 继承了 Vector，加了锁。
  * 应该使用 Deque 来替换 Stack
  *
+ * 创建实例 Deque<Object> stack = new LinkedList<>();
+ * 元素入栈 stack.push(new Object());
+ * 元素出栈 Object obj = stack.pop();
+ * 栈顶元素 Object obj = stack.peek();
+ *
  * @Author GuJun
  * @Date 2021/1/4
  */
