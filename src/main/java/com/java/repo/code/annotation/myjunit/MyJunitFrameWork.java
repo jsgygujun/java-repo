@@ -12,7 +12,7 @@ import java.util.List;
 public class MyJunitFrameWork {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException {
         // 1. 找到测试类的字节码: UserDAOTest
-        Class clazz = UserDAOTest.class;
+        Class<?> clazz = UserDAOTest.class;
         Object obj = clazz.newInstance();
         // 2. 获取UserDAOTest类中所有的公共方法
         Method[] methods = clazz.getMethods();
