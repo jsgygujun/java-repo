@@ -1,6 +1,5 @@
 package com.java.repo.code.lock;
 
-import sun.tools.tree.ShiftLeftExpression;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
