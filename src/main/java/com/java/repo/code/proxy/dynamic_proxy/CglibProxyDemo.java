@@ -8,8 +8,8 @@ import org.junit.Test;
 import java.lang.reflect.Method;
 
 /**
- * Cglib代理,也叫作子类代理,它是在内存中构建一个子类对象从而实现对目标对象功能的扩展.
- * 注意： 代理的类不能为final
+ * Cglib代理，也叫作子类代理,它是在内存中构建一个子类对象从而实现对目标对象功能的扩展。
+ * 注意： 代理的类不能为final，代理的方法不能是private，final，static修饰的。
  *
  * @Author GuJun
  * @Date 2020/12/28
