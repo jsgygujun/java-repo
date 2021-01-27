@@ -20,10 +20,11 @@ public class StackDemo {
     public static void main(String[] args) {
         Deque<Integer> stack = new LinkedList<>();
         for (int i = 0; i < 10; ++i) {
-            stack.push(i);
+            stack.push(i); // 入栈
         }
         while (!stack.isEmpty()) {
-            System.out.println(stack.pop());
+            System.out.println(stack.peek()); // 栈顶元素
+            System.out.println(stack.pop()); // 出栈
         }
     }
 }
