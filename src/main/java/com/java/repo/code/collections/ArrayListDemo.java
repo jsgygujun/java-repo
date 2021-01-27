@@ -15,8 +15,9 @@ public class ArrayListDemo {
         }
 
         list.add(4, 1000); // 1000插入到index=4的位置上
+        list.add(list.size(), 10000);
 
-        list.add(1000, 100000); // size小于插入index抛出异常。
+        //list.add(1000, 100000); // size小于插入index抛出异常。
 
         System.out.println(list);
     }
