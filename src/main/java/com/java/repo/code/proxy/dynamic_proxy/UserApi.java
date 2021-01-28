@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.lang.reflect.Method;
 
 /**
+ * 具体类实现接口
+ *
  * @Author GuJun
  * @Date 2020/12/28
  */
