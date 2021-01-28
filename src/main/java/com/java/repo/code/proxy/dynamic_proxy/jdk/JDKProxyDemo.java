@@ -1,5 +1,6 @@
-package com.java.repo.code.proxy.dynamic_proxy;
+package com.java.repo.code.proxy.dynamic_proxy.jdk;
 
+import com.java.repo.code.proxy.dynamic_proxy.UserApi;
 import org.junit.Test;
 
 import java.lang.reflect.InvocationHandler;

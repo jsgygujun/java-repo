@@ -1,5 +1,6 @@
 package com.java.repo.code.proxy.dynamic_proxy;
 
+import com.java.repo.code.proxy.dynamic_proxy.jdk.IUserApi;
 import org.junit.Test;
 
 import java.lang.reflect.Method;

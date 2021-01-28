@@ -1,4 +1,4 @@
-package com.java.repo.code.proxy.dynamic_proxy;
+package com.java.repo.code.proxy.dynamic_proxy.jdk;
 
 /**
  * 定义一个接口

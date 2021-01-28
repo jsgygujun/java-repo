@@ -1,5 +1,6 @@
-package com.java.repo.code.proxy.dynamic_proxy;
+package com.java.repo.code.proxy.dynamic_proxy.cglib;
 
+import com.java.repo.code.proxy.dynamic_proxy.UserApi;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
