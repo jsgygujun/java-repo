@@ -1,7 +1,6 @@
 package com.java.repo.demo.caffeine_cache;
 
 
-import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
 
@@ -18,7 +17,7 @@ public class CaffeineCacheDemo {
             .newBuilder()
             .maximumSize(1000)
             .expireAfterWrite(Duration.ofHours(1))
-            .build(this::loadKey); // 可以缓存Optional.empty();
+            .build(this::loadKey); // 可以缓存「Optional.empty()」
 
     private Optional<Object> loadKey(String key) {
         System.out.println("loadKey: " + key);
@@ -32,7 +31,7 @@ public class CaffeineCacheDemo {
             .newBuilder()
             .maximumSize(1000)
             .expireAfterWrite(Duration.ofHours(1))
-            .build(this::loadKey2); // 不缓存null
+            .build(this::loadKey2); // 不缓存 「null」
 
     private Object loadKey2(String key) {
         System.out.println("loadKey2: " + key);
@@ -46,7 +45,7 @@ public class CaffeineCacheDemo {
             .newBuilder()
             .maximumSize(1000)
             .expireAfterWrite(Duration.ofHours(1))
-            .build(this::loadKey3WithException);
+            .build(this::loadKey3WithException); // 可以抛出异常
 
     private Optional<Object> loadKey3WithException(String key) throws Exception {
         System.out.println("loadKey3" + key);
@@ -56,23 +55,27 @@ public class CaffeineCacheDemo {
         throw new Exception("Failed to loadKey3");
     }
 
-    public static void main(String[] args) {
-//        CaffeineCacheDemo caffeineCacheDemo = new CaffeineCacheDemo();
-//        for (int i = 0; i < 10; ++i) {
-//            System.out.println(caffeineCacheDemo.cache.get(i+""));
-//        }
-//        for (int i = 0; i < 10; ++i) {
-//            System.out.println(caffeineCacheDemo.cache.get(i+""));
-//        }
+    private static void cacheOptional() {
+        CaffeineCacheDemo caffeineCacheDemo = new CaffeineCacheDemo();
+        for (int i = 0; i < 10; ++i) {
+            System.out.println(caffeineCacheDemo.cache.get(i+""));
+        }
+        for (int i = 0; i < 10; ++i) {
+            System.out.println(caffeineCacheDemo.cache.get(i+""));
+        }
+    }
 
-//        CaffeineCacheDemo caffeineCacheDemo = new CaffeineCacheDemo();
-//        for (int i = 0; i < 10; ++i) {
-//            System.out.println(caffeineCacheDemo.cache2.get(i+""));
-//        }
-//        for (int i = 0; i < 10; ++i) {
-//            System.out.println(caffeineCacheDemo.cache2.get(i+""));
-//        }
+    private static void cacheObject() {
+        CaffeineCacheDemo caffeineCacheDemo = new CaffeineCacheDemo();
+        for (int i = 0; i < 10; ++i) {
+            System.out.println(caffeineCacheDemo.cache2.get(i+""));
+        }
+        for (int i = 0; i < 10; ++i) {
+            System.out.println(caffeineCacheDemo.cache2.get(i+""));
+        }
+    }
 
+    private static void cacheOptionalWithException() {
         CaffeineCacheDemo caffeineCacheDemo = new CaffeineCacheDemo();
         for (int i = 0; i < 10; ++i) {
             try {
@@ -88,5 +91,11 @@ public class CaffeineCacheDemo {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void main(String[] args) {
+//        cacheOptional();
+//        cacheObject();
+//        cacheOptionalWithException();
     }
 }
