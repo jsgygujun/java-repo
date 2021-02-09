@@ -20,7 +20,6 @@ import java.util.stream.IntStream;
  * @author GuJun
  * @date 2021/2/7
  */
-@Slf4j
 public abstract class AbstractRecall {
 
     private final ExecutorService THREAD_POOL;
