@@ -20,7 +20,13 @@ public abstract class AbstractFetch {
     protected String reverseType;
     protected String rSource;
 
-    public List<RecItem> fetch(RecContext recContext) {
+    public AbstractFetch(String corpusType, String reverseType, String rSource) {
+        this.corpusType = corpusType;
+        this.reverseType = reverseType;
+        this.rSource = rSource;
+    }
+
+    public List<RecItem> fetch(RecContext recContext, List<String> triggers) {
         return Collections.emptyList();
     }
 

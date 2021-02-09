@@ -2,12 +2,17 @@ package com.java.repo.recsys.core.recommend;
 
 import com.java.repo.recsys.core.RecRequest;
 import com.java.repo.recsys.core.RecResponse;
+import com.java.repo.recsys.core.rank.AbstractRank;
+import com.java.repo.recsys.core.recall.AbstractRecall;
 
 /**
  * @author GuJun
  * @date 2021/2/7
  */
 public abstract class AbstractRecommend {
+
+    private AbstractRecall recall;
+    private AbstractRank rank;
 
     public abstract RecResponse recommend(RecRequest recRequest);
 

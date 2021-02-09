@@ -12,8 +12,12 @@ import java.util.List;
  */
 public class I2IFetch extends AbstractFetch {
 
+    public I2IFetch(String corpusType, String reverseType, String rSource) {
+        super(corpusType, reverseType, rSource);
+    }
+
     @Override
-    public List<RecItem> fetch(RecContext recContext) {
-        return super.fetch(recContext);
+    public List<RecItem> fetch(RecContext recContext, List<String> triggers) {
+        return super.fetch(recContext, triggers);
     }
 }
