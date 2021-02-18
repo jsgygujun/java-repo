@@ -23,7 +23,7 @@ public enum Bucket {
     Bucket_15("bkt_15"),
     Bucket_16("bkt_16"),
     Bucket_17("bkt_17"),
-    Bucket_8("bkt_18"),
+    Bucket_18("bkt_18"),
     Bucket_19("bkt_19");
 
     Bucket(String name) {
