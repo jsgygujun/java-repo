@@ -2,7 +2,7 @@ package com.java.repo.recsys.core.ab;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.java.repo.recsys.core.bucket.Bucket;
+import com.java.repo.recsys.core.bean.Bucket;
 import com.java.repo.util.ConfigUtil;
 import com.typesafe.config.ConfigValue;
 import lombok.val;

@@ -1,4 +1,4 @@
-package com.java.repo.recsys.core;
+package com.java.repo.recsys.core.bean;
 
 import lombok.Data;
 

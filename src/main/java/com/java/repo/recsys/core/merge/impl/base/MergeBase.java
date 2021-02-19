@@ -1,6 +1,6 @@
 package com.java.repo.recsys.core.merge.impl.base;
 
-import com.java.repo.recsys.core.RecItem;
+import com.java.repo.recsys.core.bean.RecItem;
 import com.java.repo.recsys.core.merge.AbstractMerge;
 
 import java.util.List;

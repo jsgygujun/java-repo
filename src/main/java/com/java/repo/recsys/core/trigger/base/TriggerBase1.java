@@ -1,6 +1,6 @@
 package com.java.repo.recsys.core.trigger.base;
 
-import com.java.repo.recsys.core.RecRequest;
+import com.java.repo.recsys.core.bean.RecRequest;
 import com.java.repo.recsys.core.trigger.Trigger;
 
 import java.util.Map;

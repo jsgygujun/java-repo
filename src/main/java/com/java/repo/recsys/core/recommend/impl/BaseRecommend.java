@@ -1,7 +1,7 @@
 package com.java.repo.recsys.core.recommend.impl;
 
-import com.java.repo.recsys.core.RecRequest;
-import com.java.repo.recsys.core.RecResponse;
+import com.java.repo.recsys.core.bean.RecRequest;
+import com.java.repo.recsys.core.bean.RecResponse;
 import com.java.repo.recsys.core.recommend.AbstractRecommend;
 
 /**

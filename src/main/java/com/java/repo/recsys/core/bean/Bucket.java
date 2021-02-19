@@ -1,4 +1,4 @@
-package com.java.repo.recsys.core.bucket;
+package com.java.repo.recsys.core.bean;
 
 /**
  * @author GuJun

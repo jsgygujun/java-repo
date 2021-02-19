@@ -3,7 +3,7 @@ package com.java.repo.recsys.core.recommend;
 import com.google.common.base.Strings;
 import com.java.repo.recsys.conf.ABTestRecommendConf;
 import com.java.repo.recsys.conf.RecommendConf;
-import com.java.repo.recsys.core.bucket.Bucket;
+import com.java.repo.recsys.core.bean.Bucket;
 import com.java.repo.recsys.core.fetch.AbstractFetch;
 import com.java.repo.recsys.core.filter.AbstractFilter;
 import com.java.repo.recsys.core.merge.AbstractMerge;
